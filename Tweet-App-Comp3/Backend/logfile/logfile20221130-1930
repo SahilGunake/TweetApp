@@ -1,0 +1,23 @@
+2022-11-30 19:30:15,744 INFO  Microsoft.Hosting.Lifetime.OnApplicationStarted [0] - MESSAGE: Application started. Press Ctrl+C to shut down.
+2022-11-30 19:30:15,917 INFO  Microsoft.Hosting.Lifetime.OnApplicationStarted [0] - MESSAGE: Hosting environment: Development
+2022-11-30 19:30:15,924 INFO  Microsoft.Hosting.Lifetime.OnApplicationStarted [0] - MESSAGE: Content root path: S:\Cognizant-Training\FSE1\Project-demo\Tweet-App-Comp3\Tweet-App-Comp3\Backend\TweetApp\
+2022-11-30 19:30:32,422 INFO  Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 6.0.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-11-30 19:30:33,120 INFO  Microsoft.EntityFrameworkCore.Infrastructure.? [?] - MESSAGE: Entity Framework Core 6.0.8 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.8' with options: None
+2022-11-30 19:30:35,349 INFO  Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (175ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[DatePosted], [t].[Subject], [t].[Tag], [t].[UserId], [u].[LoginId], [u].[ContactNumber], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password]
+FROM [Tweets] AS [t]
+INNER JOIN [Users] AS [u] ON [t].[UserId] = [u].[LoginId]
+2022-11-30 19:30:35,349 INFO  Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (175ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[LoginId], [t].[ContactNumber], [t].[Email], [t].[FirstName], [t].[IsActive], [t].[LastName], [t].[Password], [p].[Id], [p].[IsMain], [p].[PublicId], [p].[Url], [p].[UserLoginId]
+FROM (
+    SELECT TOP(1) [u].[LoginId], [u].[ContactNumber], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password]
+    FROM [Users] AS [u]
+    WHERE 0 = 1
+) AS [t]
+LEFT JOIN [Photos] AS [p] ON [t].[LoginId] = [p].[UserLoginId]
+ORDER BY [t].[LoginId]
+2022-11-30 19:30:35,574 INFO  Microsoft.EntityFrameworkCore.Database.Command.? [?] - MESSAGE: Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[LoginId], [u].[ContactNumber], [u].[Email], [u].[FirstName], [u].[IsActive], [u].[LastName], [u].[Password], [p].[Id], [p].[IsMain], [p].[PublicId], [p].[Url], [p].[UserLoginId]
+FROM [Users] AS [u]
+LEFT JOIN [Photos] AS [p] ON [u].[LoginId] = [p].[UserLoginId]
+ORDER BY [u].[LoginId]

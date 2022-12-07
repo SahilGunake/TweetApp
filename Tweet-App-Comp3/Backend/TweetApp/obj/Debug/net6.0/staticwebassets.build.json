@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "BnFX6CRlYOD2G4qGTERyisvqZnWm5YAM0D1Eu1ACneM=",
+  "Source": "TweetApp",
+  "BasePath": "_content/TweetApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
